@@ -10,43 +10,46 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/TicTacToe_Netwerkprogramming$TicTacToeClient.coverage" NAME="TicTacToeClient Coverage Results" MODIFIED="1527113629423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TicTacToeClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TicTacToeClient.java">
+      <file leaf-file-name="Connect4Client.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Connect4Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="284" column="40" lean-forward="true" selection-start-line="284" selection-start-column="40" selection-end-line="284" selection-end-column="40" />
+            <state relative-caret-position="432">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7984#7985#0" expanded="true" />
-                <element signature="e#8020#8021#0" expanded="true" />
-                <element signature="e#10736#10737#0" expanded="true" />
-                <element signature="e#10764#10765#0" expanded="true" />
+                <element signature="e#7982#7983#0" expanded="true" />
+                <element signature="e#8018#8019#0" expanded="true" />
+                <element signature="e#10734#10735#0" expanded="true" />
+                <element signature="e#10762#10763#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicTacToeConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TicTacToeConstants.java">
+      <file leaf-file-name="Connect4Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Connect4Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicTacToeServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TicTacToeServer.java">
+      <file leaf-file-name="Connect4Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Connect4Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4992">
-              <caret line="216" column="44" lean-forward="false" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
+            <state relative-caret-position="1920">
+              <caret line="80" column="63" lean-forward="false" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9157#9158#0" expanded="true" />
-                <element signature="e#9185#9186#0" expanded="true" />
+                <element signature="e#9884#9885#0" expanded="true" />
+                <element signature="e#9912#9913#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +87,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/TicTacToeConstants.java" />
-        <option value="$PROJECT_DIR$/src/TicTacToeServer.java" />
         <option value="$PROJECT_DIR$/src/TicTacToeClient.java" />
+        <option value="$PROJECT_DIR$/src/TicTacToeServer.java" />
+        <option value="$PROJECT_DIR$/src/Connect4Constants.java" />
+        <option value="$PROJECT_DIR$/src/Connect4Client.java" />
+        <option value="$PROJECT_DIR$/src/Connect4Server.java" />
       </list>
     </option>
   </component>
@@ -154,13 +160,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TicTacToeClient">
+  <component name="RunManager" selected="Application.Connect4Client">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Connect4Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Connect4Client" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="NetwerkProgameren-TicTakToe" />
+      <envs />
+    </configuration>
+    <configuration name="Connect4Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Connect4Server" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="NetwerkProgameren-TicTakToe" />
+      <envs />
     </configuration>
     <configuration name="TicTacToeClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -264,14 +298,18 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.TicTacToeServer" />
       <item index="1" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Connect4Server" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Connect4Client" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TicTacToeServer" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.Connect4Client" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Connect4Server" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TicTacToeServer" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TicTacToeClient" />
       </list>
     </recent_temporary>
   </component>
@@ -291,12 +329,12 @@
       <workItem from="1527058422178" duration="73000" />
       <workItem from="1527059495287" duration="1048000" />
       <workItem from="1527065203002" duration="10075000" />
-      <workItem from="1527097774496" duration="4109000" />
+      <workItem from="1527097774496" duration="10550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15305000" />
+    <option name="totallyTimeSpent" value="21746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
@@ -312,6 +350,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="5.2083336E-4" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -344,21 +383,21 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7984#7985#0" expanded="true" />
-            <element signature="e#8020#8021#0" expanded="true" />
-            <element signature="e#10736#10737#0" expanded="true" />
-            <element signature="e#10764#10765#0" expanded="true" />
+            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#8018#8019#0" expanded="true" />
+            <element signature="e#10734#10735#0" expanded="true" />
+            <element signature="e#10762#10763#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
@@ -366,33 +405,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeServer.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4992">
           <caret line="216" column="44" lean-forward="true" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9157#9158#0" expanded="true" />
-            <element signature="e#9185#9186#0" expanded="true" />
+            <element signature="e#9884#9885#0" expanded="true" />
+            <element signature="e#9912#9913#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7128">
           <caret line="297" column="1" lean-forward="false" selection-start-line="297" selection-start-column="1" selection-end-line="297" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7984#7985#0" expanded="true" />
-            <element signature="e#8020#8021#0" expanded="true" />
-            <element signature="e#10736#10737#0" expanded="true" />
-            <element signature="e#10764#10765#0" expanded="true" />
+            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#8018#8019#0" expanded="true" />
+            <element signature="e#10734#10735#0" expanded="true" />
+            <element signature="e#10762#10763#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
@@ -400,48 +439,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeServer.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4848">
           <caret line="210" column="6" lean-forward="false" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9157#9158#0" expanded="true" />
-            <element signature="e#9185#9186#0" expanded="true" />
+            <element signature="e#9884#9885#0" expanded="true" />
+            <element signature="e#9912#9913#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeServer.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4992">
-          <caret line="216" column="44" lean-forward="false" selection-start-line="216" selection-start-column="44" selection-end-line="216" selection-end-column="44" />
+        <state relative-caret-position="1920">
+          <caret line="80" column="63" lean-forward="false" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9157#9158#0" expanded="true" />
-            <element signature="e#9185#9186#0" expanded="true" />
+            <element signature="e#9884#9885#0" expanded="true" />
+            <element signature="e#9912#9913#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicTacToeClient.java">
+    <entry file="file://$PROJECT_DIR$/src/Connect4Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="284" column="40" lean-forward="true" selection-start-line="284" selection-start-column="40" selection-end-line="284" selection-end-column="40" />
+        <state relative-caret-position="432">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7984#7985#0" expanded="true" />
-            <element signature="e#8020#8021#0" expanded="true" />
-            <element signature="e#10736#10737#0" expanded="true" />
-            <element signature="e#10764#10765#0" expanded="true" />
+            <element signature="e#7982#7983#0" expanded="true" />
+            <element signature="e#8018#8019#0" expanded="true" />
+            <element signature="e#10734#10735#0" expanded="true" />
+            <element signature="e#10762#10763#0" expanded="true" />
           </folding>
         </state>
       </provider>

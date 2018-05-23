@@ -15,8 +15,8 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-public class TicTacToeClient extends Application
-        implements TicTacToeConstants {
+public class Connect4Client extends Application
+        implements Connect4Constants {
     // Indicate whether the player has the turn
     private boolean myTurn = false;
 

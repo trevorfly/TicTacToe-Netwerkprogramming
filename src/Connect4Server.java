@@ -8,8 +8,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-public class TicTacToeServer extends Application
-        implements TicTacToeConstants {
+public class Connect4Server extends Application
+        implements Connect4Constants {
     private int sessionNo = 1; // Number a session
 
     @Override // Override the start method in the Application class
@@ -18,7 +18,7 @@ public class TicTacToeServer extends Application
 
         // Create a scene and place it in the stage
         Scene scene = new Scene(new ScrollPane(taLog), 450, 200);
-        primaryStage.setTitle("TicTacToeServer"); // Set the stage title
+        primaryStage.setTitle("Connect4Server"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
 
@@ -78,7 +78,7 @@ public class TicTacToeServer extends Application
     }
 
     // Define the thread class for handling a new session for two players
-    class HandleASession implements Runnable, TicTacToeConstants {
+    class HandleASession implements Runnable, Connect4Constants {
         private Socket player1;
         private Socket player2;
 
@@ -197,33 +197,49 @@ public class TicTacToeServer extends Application
         /** Determine if the player with the specified token wins */
         private boolean isWon(char token) {
             // Check all rows
-            for (int i = 0; i < 3; i++)
-                if ((cell[i][0] == token)
-                        && (cell[i][1] == token)
-                        && (cell[i][2] == token)) {
+            for (int i = 0; i < 6; i++) {
+                for(int j = 0; j < 4; j++){
+                if ((cell[i][j] == token)
+                        && (cell[i][j + 1] == token)
+                        && (cell[i][j + 2] == token)
+                        && (cell[i][j + 3] == token)
+                        ) {
                     return true;
                 }
-
+                }
+            }
             /** Check all columns */
-            for (int j = 0; j < 3; j++)
-                if ((cell[0][j] == token)
-                        && (cell[1][j] == token)
-                        && (cell[2][j] == token)) {
-                    return true;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 7; j++) {
+                    if ((cell[i][j] == token)
+                            && (cell[i + 1][j] == token)
+                           && (cell[i + 2][j] == token)
+                           && (cell[i + 3][j] == token)) {
+                       return true;
+                    }
                 }
+            }
 
             /** Check major diagonal */
-            if ((cell[0][0] == token)
-                    && (cell[1][1] == token)
-                    && (cell[2][2] == token)) {
-                return true;
+            for(int i = 3; i < 6; i++) {
+                for(int j = 0; j < 4; j++)
+                if ((cell[i][j] == token)
+                        && (cell[i - 1][j + 1] == token)
+                        && (cell[i - 2][j + 2] == token)
+                        && (cell[i - 3][j + 3] == token)) {
+                    return true;
+                }
             }
 
             /** Check subdiagonal */
-            if ((cell[0][2] == token)
-                    && (cell[1][1] == token)
-                    && (cell[2][0] == token)) {
-                return true;
+            for(int i = 3; i < 6; i++) {
+                for(int j = 3; j < 7; j++)
+                    if ((cell[i][j] == token)
+                            && (cell[i - 1][j - 1] == token)
+                            && (cell[i - 2][j - 2] == token)
+                            && (cell[i - 3][j - 3] == token)) {
+                        return true;
+                    }
             }
 
             /** All checked, but no winner */
