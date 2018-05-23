@@ -27,7 +27,7 @@ public class TicTacToeClient extends Application
     private char otherToken = ' ';
 
     // Create and initialize cells
-    private Cell[][] cell =  new Cell[3][3];
+    private Cell[][] cell =  new Cell[6][7];
 
     // Create and initialize a title label
     private Label lblTitle = new Label();
@@ -56,8 +56,8 @@ public class TicTacToeClient extends Application
     public void start(Stage primaryStage) {
         // Pane to hold cell
         GridPane pane = new GridPane();
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
+        for (int i = 0; i < 6; i++)
+            for (int j = 0; j < 7; j++)
                 pane.add(cell[i][j] = new Cell(i, j), j, i);
 
         BorderPane borderPane = new BorderPane();
@@ -229,12 +229,16 @@ public class TicTacToeClient extends Application
             this.setOnMouseClicked(e -> handleMouseClick());
         }
 
-        /** Return token */
+        /**
+         * Return token
+         */
         public char getToken() {
             return token;
         }
 
-        /** Set a new token */
+        /**
+         * Set a new token
+         */
         public void setToken(char c) {
             token = c;
             repaint();
@@ -254,8 +258,7 @@ public class TicTacToeClient extends Application
 
                 // Add the lines to the pane
                 this.getChildren().addAll(line1, line2);
-            }
-            else if (token == 'O') {
+            } else if (token == 'O') {
                 Ellipse ellipse = new Ellipse(this.getWidth() / 2,
                         this.getHeight() / 2, this.getWidth() / 2 - 10,
                         this.getHeight() / 2 - 10);
@@ -277,11 +280,17 @@ public class TicTacToeClient extends Application
         /* Handle a mouse click event */
         private void handleMouseClick() {
             // If cell is not occupied and the player has the turn
-            if (token == ' ' && myTurn) {
-                setToken(myToken);  // Set the player's token in the cell
-                myTurn = false;
-                rowSelected = row;
+            if (myTurn) {
+
                 columnSelected = column;
+
+                for (rowSelected = 5; rowSelected >= 0; rowSelected--) {
+                    if (cell[rowSelected][columnSelected].token == ' ') {
+                        cell[rowSelected][columnSelected].setToken(myToken); // Set the player's token in the cell
+                        break;
+                    }
+                }
+                myTurn = false;
                 lblStatus.setText("Waiting for the other player to move");
                 waiting = false; // Just completed a successful move
             }

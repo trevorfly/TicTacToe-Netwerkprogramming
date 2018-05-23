@@ -83,7 +83,7 @@ public class TicTacToeServer extends Application
         private Socket player2;
 
         // Create and initialize cells
-        private char[][] cell =  new char[3][3];
+        private char[][] cell =  new char[6][7];
 
         private DataInputStream fromPlayer1;
         private DataOutputStream toPlayer1;
@@ -99,8 +99,8 @@ public class TicTacToeServer extends Application
             this.player2 = player2;
 
             // Initialize cells
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 6; i++)
+                for (int j = 0; j < 7; j++)
                     cell[i][j] = ' ';
         }
 
@@ -185,8 +185,8 @@ public class TicTacToeServer extends Application
 
         /** Determine if the cells are all occupied */
         private boolean isFull() {
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 6; i++)
+                for (int j = 0; j < 7; j++)
                     if (cell[i][j] == ' ')
                         return false; // At least one cell is not filled
 
