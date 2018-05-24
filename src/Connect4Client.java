@@ -280,7 +280,7 @@ public class Connect4Client extends Application
         /* Handle a mouse click event */
         private void handleMouseClick() {
             // If cell is not occupied and the player has the turn
-            if (myTurn) {
+            if (token == ' ' && myTurn) {
 
                 columnSelected = column;
 
