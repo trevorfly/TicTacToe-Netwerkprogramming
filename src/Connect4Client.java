@@ -21,10 +21,10 @@ public class Connect4Client extends Application
     private boolean myTurn = false;
 
     // Indicate the token for the player
-    private char myToken = ' ';
+    private String myToken = " ";
 
     // Indicate the token for the other player
-    private char otherToken = ' ';
+    private String otherToken = " ";
 
     // Create and initialize cells
     private Cell[][] cell =  new Cell[6][7];
@@ -98,10 +98,10 @@ public class Connect4Client extends Application
 
                 // Am I player 1 or 2?
                 if (player == PLAYER1) {
-                    myToken = 'X';
-                    otherToken = 'O';
+                    myToken =  "GREEN";
+                    otherToken = "RED";
                     Platform.runLater(() -> {
-                        lblTitle.setText("Player 1 with token 'X'");
+                        lblTitle.setText("Player 1 with token 'Green'");
                         lblStatus.setText("Waiting for player 2 to join");
                     });
 
@@ -116,10 +116,10 @@ public class Connect4Client extends Application
                     myTurn = true;
                 }
                 else if (player == PLAYER2) {
-                    myToken = 'O';
-                    otherToken = 'X';
+                    myToken = "RED";
+                    otherToken = "GREEN";
                     Platform.runLater(() -> {
-                        lblTitle.setText("Player 2 with token 'O'");
+                        lblTitle.setText("Player 2 with token 'RED'");
                         lblStatus.setText("Waiting for player 1 to move");
                     });
                 }
@@ -167,24 +167,24 @@ public class Connect4Client extends Application
         if (status == PLAYER1_WON) {
             // Player 1 won, stop playing
             continueToPlay = false;
-            if (myToken == 'X') {
-                Platform.runLater(() -> lblStatus.setText("I won! (X)"));
+            if (myToken .equals( "GREEN")) {
+                Platform.runLater(() -> lblStatus.setText("I won! (GREEN)"));
             }
-            else if (myToken == 'O') {
+            else if (myToken  .equals("RED")) {
                 Platform.runLater(() ->
-                        lblStatus.setText("Player 1 (X) has won!"));
+                        lblStatus.setText("Player 1 (GREEN) has won!"));
                 receiveMove();
             }
         }
         else if (status == PLAYER2_WON) {
             // Player 2 won, stop playing
             continueToPlay = false;
-            if (myToken == 'O') {
-                Platform.runLater(() -> lblStatus.setText("I won! (O)"));
+            if (myToken .equals( 'O')) {
+                Platform.runLater(() -> lblStatus.setText("I won! (RED)"));
             }
-            else if (myToken == 'X') {
+            else if (myToken .equals( "GREEN")) {
                 Platform.runLater(() ->
-                        lblStatus.setText("Player 2 (O) has won!"));
+                        lblStatus.setText("Player 2 (RED) has won!"));
                 receiveMove();
             }
         }
@@ -194,7 +194,7 @@ public class Connect4Client extends Application
             Platform.runLater(() ->
                     lblStatus.setText("Game is over, no winner!"));
 
-            if (myToken == 'O') {
+            if (myToken .equals( "RED")) {
                 receiveMove();
             }
         }
@@ -219,7 +219,7 @@ public class Connect4Client extends Application
         private int column;
 
         // Token used for this cell
-        private char token = ' ';
+        private String token = " ";
 
         public Cell(int row, int column) {
             this.row = row;
@@ -232,33 +232,20 @@ public class Connect4Client extends Application
         /**
          * Return token
          */
-        public char getToken() {
+        public String getToken() {
             return token;
         }
 
         /**
          * Set a new token
          */
-        public void setToken(char c) {
+        public void setToken(String c) {
             token = c;
             repaint();
         }
 
         protected void repaint() {
-            if (token == 'X') {
-                Line line1 = new Line(10, 10,
-                        this.getWidth() - 10, this.getHeight() - 10);
-                line1.endXProperty().bind(this.widthProperty().subtract(10));
-                line1.endYProperty().bind(this.heightProperty().subtract(10));
-                Line line2 = new Line(10, this.getHeight() - 10,
-                        this.getWidth() - 10, 10);
-                line2.startYProperty().bind(
-                        this.heightProperty().subtract(10));
-                line2.endXProperty().bind(this.widthProperty().subtract(10));
-
-                // Add the lines to the pane
-                this.getChildren().addAll(line1, line2);
-            } else if (token == 'O') {
+            if (token== "GREEN") {
                 Ellipse ellipse = new Ellipse(this.getWidth() / 2,
                         this.getHeight() / 2, this.getWidth() / 2 - 10,
                         this.getHeight() / 2 - 10);
@@ -270,8 +257,26 @@ public class Connect4Client extends Application
                         this.widthProperty().divide(2).subtract(10));
                 ellipse.radiusYProperty().bind(
                         this.heightProperty().divide(2).subtract(10));
-                ellipse.setStroke(Color.BLACK);
-                ellipse.setFill(Color.WHITE);
+                ellipse.setStroke(Color.GREEN);
+                ellipse.setFill(Color.GREEN);
+
+                // Add the lines to the pane
+                //this.getChildren().addAll(line1, line2);
+                getChildren().add(ellipse); // Add the ellipse to the pane
+            } else if (token == "RED") {
+                Ellipse ellipse = new Ellipse(this.getWidth() / 2,
+                        this.getHeight() / 2, this.getWidth() / 2 - 10,
+                        this.getHeight() / 2 - 10);
+                ellipse.centerXProperty().bind(
+                        this.widthProperty().divide(2));
+                ellipse.centerYProperty().bind(
+                        this.heightProperty().divide(2));
+                ellipse.radiusXProperty().bind(
+                        this.widthProperty().divide(2).subtract(10));
+                ellipse.radiusYProperty().bind(
+                        this.heightProperty().divide(2).subtract(10));
+                ellipse.setStroke(Color.RED);
+                ellipse.setFill(Color.RED);
 
                 getChildren().add(ellipse); // Add the ellipse to the pane
             }
@@ -280,12 +285,12 @@ public class Connect4Client extends Application
         /* Handle a mouse click event */
         private void handleMouseClick() {
             // If cell is not occupied and the player has the turn
-            if (token == ' ' && myTurn) {
+            if (token == " " && myTurn) {
 
                 columnSelected = column;
 
                 for (rowSelected = 5; rowSelected >= 0; rowSelected--) {
-                    if (cell[rowSelected][columnSelected].token == ' ') {
+                    if (cell[rowSelected][columnSelected].token == " ") {
                         cell[rowSelected][columnSelected].setToken(myToken); // Set the player's token in the cell
                         break;
                     }
