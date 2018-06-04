@@ -1,6 +1,9 @@
 import java.io.*;
 import java.net.*;
 import java.util.Date;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -25,6 +28,8 @@ public class Connect4Client extends Application
 
     // Indicate the token for the other player
     private String otherToken = " ";
+
+    private String emty = " ";
 
     // Create and initialize cells
     private Cell[][] cell =  new Cell[6][7];
@@ -52,14 +57,20 @@ public class Connect4Client extends Application
     // Host name or ip
     private String host = "localhost";
 
+    //Temporary location for token
+    private int tempColumn;
+    private int tempRow;
+
     @Override // Override the start method in the Application class
     public void start(Stage primaryStage) {
         // Pane to hold cell
         GridPane pane = new GridPane();
-        for (int i = 0; i < 6; i++)
-            for (int j = 0; j < 7; j++)
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 7; j++) {
                 pane.add(cell[i][j] = new Cell(i, j), j, i);
 
+            }
+        }
         BorderPane borderPane = new BorderPane();
         borderPane.setTop(lblTitle);
         borderPane.setCenter(pane);
@@ -67,7 +78,7 @@ public class Connect4Client extends Application
 
         // Create a scene and place it in the stage
         Scene scene = new Scene(borderPane, 320, 350);
-        primaryStage.setTitle("TicTacToeClient"); // Set the stage title
+        primaryStage.setTitle("Connect 4"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
 
@@ -179,7 +190,7 @@ public class Connect4Client extends Application
         else if (status == PLAYER2_WON) {
             // Player 2 won, stop playing
             continueToPlay = false;
-            if (myToken .equals( 'O')) {
+            if (myToken .equals( "RED")) {
                 Platform.runLater(() -> lblStatus.setText("I won! (RED)"));
             }
             else if (myToken .equals( "GREEN")) {
@@ -279,7 +290,10 @@ public class Connect4Client extends Application
                 ellipse.setFill(Color.RED);
 
                 getChildren().add(ellipse); // Add the ellipse to the pane
+            } else if (token == "emty"){
+             Ellipse ellipse = new Ellipse();
             }
+
         }
 
         /* Handle a mouse click event */
@@ -291,13 +305,36 @@ public class Connect4Client extends Application
 
                 for (rowSelected = 5; rowSelected >= 0; rowSelected--) {
                     if (cell[rowSelected][columnSelected].token == " ") {
-                        cell[rowSelected][columnSelected].setToken(myToken); // Set the player's token in the cell
+                        tempRow = rowSelected;      //temporary values of position of lowest token
+                        tempColumn = columnSelected;
                         break;
                     }
                 }
+                animationHandler();
                 myTurn = false;
                 lblStatus.setText("Waiting for the other player to move");
                 waiting = false; // Just completed a successful move
+            }
+        }
+    }
+
+    public void animationHandler() {
+
+        for (rowSelected = 0; rowSelected <= 5; rowSelected++) { //from up to bottom
+            cell[rowSelected][columnSelected].setToken(myToken); // Set the player's token in the cell
+
+            try {
+                wait(100);              //timer that wil wait
+            } catch (InterruptedException ex) { //executed afther timer.
+
+
+                if (rowSelected == tempRow) {   //check if token position is right
+                    break;
+
+
+                } else {
+                    cell[rowSelected][columnSelected].setToken(emty); // emty the current cell 
+                }
             }
         }
     }
